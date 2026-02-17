@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * A general Drupal 10 module for the CSC main site for miscellaneous hooks, etc. for customization
+ */
+
 // use Drupal\views\ViewExecutable;
 // use Symfony\Component\HttpFoundation\RedirectResponse;
 
