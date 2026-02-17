@@ -1,0 +1,29 @@
+<?php
+
+// use Drupal\views\ViewExecutable;
+// use Symfony\Component\HttpFoundation\RedirectResponse;
+
+function csc_general_preprocess_page(&$variables) {
+  // Redirect taxonomy term pages to homepage
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name === 'entity.taxonomy_term.canonical') {
+    // Redirect to homepage
+    $response = new \Symfony\Component\HttpFoundation\RedirectResponse('/');
+    $response->send();
+    exit;
+  }
+}
+
+
+/*
+function csc_log_gen($msg='no message sent to log function', $ltype='notice', $sufx='') {
+  if (strlen($sufx) > 0) { $sufx = " $sufx"; }
+  if ($ltype == 'warning') {
+    Drupal::logger("csc_bs_sass$sufx")->warning($msg);
+  } elseif ($ltype == 'error') {
+    Drupal::logger("csc_bs_sass$sufx")->error($msg);
+  } else {
+    Drupal::logger("csc_bs_sass$sufx")->notice($msg);
+  }
+}
+ */
